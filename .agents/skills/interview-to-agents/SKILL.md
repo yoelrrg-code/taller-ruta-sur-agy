@@ -1,83 +1,87 @@
 ---
 name: interview-to-agents
 description: >-
-  Processes an interview transcript or audio/video recording placed in the
-  `interview/` directory, transcribes audio if needed, extracts website
-  requirements (marking any inferred or AI-generated content as
-  `SUGERIDO_POR_IA`), and populates `AGENTS.md` at the repository root.
-  Use this skill when starting a new project from this boilerplate with a
-  client interview file or when asked to generate `AGENTS.md` from an interview.
+  Procesa una transcripción o grabación de audio/video de entrevista ubicada en
+  el directorio `interview/`, transcribe el audio si es necesario, extrae los
+  requerimientos del sitio web (marcando cualquier contenido inferido o
+  autogenerado como `SUGERIDO_POR_IA`) y completa `AGENTS.md` en la raíz del
+  repositorio en español LATAM. Usar esta skill al iniciar un nuevo proyecto
+  desde este boilerplate con una entrevista del cliente o cuando se pida
+  generar `AGENTS.md` a partir de una entrevista.
 ---
 
-# Interview to `AGENTS.md`
+# Entrevista a `AGENTS.md`
 
-Transforms a raw client interview (transcript or audio/video recording) in
-`interview/` into a completed `AGENTS.md` at the project root, preserving all
-existing instructions and rules in `AGENTS.md`.
+Transforma una entrevista cruda del cliente (transcripción o grabación de
+audio/video) en `interview/` en un `AGENTS.md` completo en la raíz del proyecto,
+preservando el 100% de las instrucciones y reglas existentes en `AGENTS.md`.
 
-## Workflow
+## Flujo de trabajo
 
-1. **Inspect `interview/`**
-   Run the inspection script from the repository root:
+1. **Inspeccionar `interview/`**
+   Ejecutar el script de inspección desde la raíz del repositorio:
    ```bash
    node .agents/skills/interview-to-agents/scripts/inspect-interview.mjs
    ```
-   - If `status` is `"empty"` or `"missing_directory"`, ask the user to place
-     their transcript or audio file in `interview/` and stop.
+   - Si `status` es `"empty"` o `"missing_directory"`, pedirle al usuario que
+     coloque la transcripción o el archivo de audio en `interview/` y detenerse.
 
-2. **Transcribe Audio (only if needed)**
-   - If `transcripts` already contains the interview text (e.g., `.txt`, `.md`,
-     `.vtt`, `.srt`, `.json`), skip transcription and read the transcript file
-     directly.
-   - If only `audioFiles` are present (`.mp3`, `.wav`, `.m4a`, `.ogg`, `.flac`,
-     `.aac`, `.webm`, `.mp4`), run:
+2. **Transcribir audio (solo si es necesario)**
+   - Si `transcripts` ya contiene el texto de la entrevista (`.txt`, `.md`,
+     `.vtt`, `.srt`, `.json`), omitir la transcripción y leer el archivo
+     directamente.
+   - Si solo hay archivos en `audioFiles` (`.mp3`, `.wav`, `.m4a`, `.ogg`,
+     `.flac`, `.aac`, `.webm`, `.mp4`), ejecutar:
      ```bash
-     node .agents/skills/interview-to-agents/scripts/transcribe-audio.mjs "<audio-file-path>"
+     node .agents/skills/interview-to-agents/scripts/transcribe-audio.mjs "<ruta-del-audio>"
      ```
-   - The script tries `gemini-api` CLI first, then `GEMINI_API_KEY` (from
-     environment or `.env.local`/`.env`), then local `whisper`. It writes
-     `<name>.transcript.md` inside `interview/`.
-   - If transcription fails due to missing credentials/tools, inform the user
-     clearly what is missing (`GEMINI_API_KEY` or `gemini-api` / `whisper`) and
-     stop.
+   - El script intenta primero con `gemini-api` CLI, luego con `GEMINI_API_KEY`
+     (en entorno o `.env.local`/`.env`), y por último con `whisper` local.
+     Guarda `<nombre>.transcript.md` dentro de `interview/`.
+   - Si falla por falta de credenciales o herramientas, informar claramente qué
+     falta (`GEMINI_API_KEY` o `gemini-api` / `whisper`) y detenerse.
 
-3. **Load the Root `AGENTS.md` Template (STRICT PRESERVATION)**
-   - Read `AGENTS.md` at the repository root in full. (If `AGENTS.md` is missing
-     or empty, copy from
-     [agents-template.md](./references/agents-template.md) as the base.)
-   - **CRITICAL RULE**: Do **NOT** delete, summarize, or alter any existing
-     instructions, rules, headings, or technical constraints in `AGENTS.md`
-     (such as `INSTRUCCIÓN PARA EL AGENTE`, Section 4 `Reglas y Restricciones
-     Estrictas para el Agente`, or Section 7 `Reglas de Interacción, Rendimiento
-     y Calidad`). Only fill in the bracketed placeholders (`[Completar]`,
-     `[Ej: ...]`, `#HEX`, `[Descripción...]`, `[Texto...]`, etc.).
-   - Also check `/public/assets/` if it exists so Section 5 reflects actual
-     files present in the repository.
+3. **Cargar el `AGENTS.md` raíz (PRESERVACIÓN ESTRICTA)**
+   - Leer completo `AGENTS.md` en la raíz del repositorio. (Si no existe o está
+     vacío, copiar [agents-template.md](./references/agents-template.md) como
+     base.)
+   - **REGLA CRÍTICA:** **NO** eliminar, resumir ni alterar ninguna instrucción,
+     regla, encabezado o restricción técnica existente en `AGENTS.md` (como
+     `INSTRUCCIÓN PARA EL AGENTE`, la Sección 4 `Reglas y Restricciones
+     Estrictas para el Agente` o la Sección 7 `Reglas de Interacción,
+     Rendimiento y Calidad`). Solo completar los placeholders entre corchetes
+     (`[Completar]`, `[Ej: ...]`, `#HEX`, `[Descripción...]`, `[Texto...]`, etc.).
+   - Revisar `/public/assets/` si existe, para reflejar los archivos reales en la
+     Sección 5.
 
-4. **Analyze the Transcript & Fill Every Placeholder**
-   - Read the transcript in full.
-   - Populate every field in `AGENTS.md` with the information explicitly stated
-     in the interview.
-   - **Missing information rules**:
-     - For any **non-factual, design, copy, or structural** field not explicitly
-       stated in the interview (e.g., palette hex codes, typography, border
-       radius, hero copy, FAQs, value-prop bullets), generate a coherent,
-       project-specific proposal and tag it clearly with `[SUGERIDO_POR_IA]`.
-     - For **factual client data** restricted by Section 4 Rule 1 of `AGENTS.md`
-       (phone numbers, emails, physical addresses, prices, statistics, real
-       testimonials), **never invent them** — use `[PENDIENTE_CLIENTE: descripción del dato]`.
-   - Match the language of `AGENTS.md` (Spanish by default unless the project
-     explicitly targets another language).
+4. **Analizar la transcripción y completar placeholders**
+   - Leer la transcripción completa.
+   - Completar cada campo de `AGENTS.md` con la información explícita de la
+     entrevista.
+   - **Idioma obligatorio (LATAM):** Redactar todo el contenido de `AGENTS.md`,
+     los textos sugeridos y el copy del sitio en **español LATAM** (español
+     neutro latinoamericano, o adaptado a la variante regional del país del
+     cliente si surge de la entrevista), salvo que el cliente pida
+     explícitamente otro idioma. Mantener el código fuente en inglés estricto
+     según la Sección 3 de `AGENTS.md`.
+   - **Reglas para información faltante:**
+     - Para cualquier dato **no factual, de diseño, copy o estructura** que no
+       esté explícito en la entrevista (paleta hex, tipografía, border radius,
+       textos de Hero, FAQs, propuesta de valor, etc.), generar una propuesta
+       coherente con el negocio y marcarla claramente con `[SUGERIDO_POR_IA]`.
+     - Para **datos factuales del cliente** cubiertos por la Regla 1 de la
+       Sección 4 (`CERO INVENCIÓN DE DATOS`: teléfonos, correos, direcciones
+       físicas, precios, estadísticas, testimonios reales), **nunca inventarlos**:
+       colocar exactamente `[PENDIENTE_CLIENTE: descripción del dato]`.
 
-5. **Write & Validate Root `AGENTS.md`**
-   - Save the completed content to `AGENTS.md` at the repository root.
-   - Verify:
-     1. All 8 numbered sections (`## 1.` through `## 8.`) and all original
-        instructions/rules are still present verbatim.
-     2. No unfilled `[Completar]` placeholders remain.
-     3. Every AI-proposed value is tagged with `SUGERIDO_POR_IA`, and any
-        missing factual contact/pricing/testimonial data uses
-        `[PENDIENTE_CLIENTE: ...]`.
-   - Report to the user which input file(s) were processed, whether audio
-     transcription ran, and which fields were marked `SUGERIDO_POR_IA` or
-     `PENDIENTE_CLIENTE` for their review.
+5. **Guardar y validar `AGENTS.md` en la raíz**
+   - Guardar el resultado final en `AGENTS.md` en la raíz del repositorio.
+   - Verificar:
+     1. Que las 8 secciones (`## 1.` a `## 8.`) y todas las instrucciones/reglas
+        originales sigan intactas.
+     2. Que no queden placeholders sin resolver como `[Completar]`.
+     3. Que todo contenido propuesto por IA tenga `[SUGERIDO_POR_IA]` y todo
+        dato factual faltante tenga `[PENDIENTE_CLIENTE: ...]`.
+   - Informar al usuario qué archivo(s) se procesaron, si se ejecutó
+     transcripción de audio y qué campos quedaron marcados como
+     `SUGERIDO_POR_IA` o `PENDIENTE_CLIENTE` para su revisión.
