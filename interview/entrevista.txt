@@ -1,0 +1,49 @@
+Transcripción de Entrevista de Relevamiento — Cliente: Taller Mecánico
+Fecha: 17 de noviembre de 2026
+Entrevistador: Yoel
+Entrevistado: Martín Rodríguez (Dueño de Taller Mecánico Ruta Sur)
+BLOQUE 1: SERVICIOS
+Entrevistador: Bueno Martín, arranquemos con lo que hacés en el taller. Si tuvieras que elegir entre consultoría/asesorías, coaching, formación, terapia u "otro", ¿cuál de estos servicios ofrecés? Podés elegir más de uno.
+Cliente: Y... claramente va por "Otro", porque lo nuestro es mecánica automotriz y mantenimiento integral de vehículos. Igual, te digo que también hacemos algo de asesoría cuando alguien quiere comprar un auto usado y nos lo trae para que lo revisemos antes de cerrar el negocio.
+Entrevistador: Bien, perfecto. ¿Cuántos servicios ofrecés en total? Nombralos y describime brevemente cada uno.
+Cliente: Mirá, los servicios fuertes del taller son cuatro:
+Mantenimiento preventivo: Todo lo que es cambio de aceite, filtros, revisión de niveles y chequeo general antes de salir a la ruta.
+Mecánica ligera y frenos: Cambio de pastillas, discos, amortiguadores, tren delantero y embrague.
+Diagnóstico computarizado: Conectamos el escáner para detectar fallas electrónicas, testigos prendidos en el tablero e inyección.
+Revisión pre-compra: El cliente nos trae el auto que quiere comprar, lo subimos al elevador, lo escaneamos y le damos un informe honesto de cómo está de motor, chapa y mecánica.
+Entrevistador: ¿Alguno de estos servicios se divide en subservicios?
+Cliente: Sí, el de Mantenimiento preventivo lo dividimos en dos: el Service Básico (que es aceite y filtro de aceite nada más) y el Service Completo (que incluye todos los filtros —aire, combustible, habitáculo— más rotación de cubiertas y chequeo de 25 puntos).
+Entrevistador: ¿Querés que en tu web se cobre online por alguno de estos servicios? Indicame por cuáles.
+Cliente: Por los arreglos grandes no, porque hasta no abrir o revisar el auto no sabemos el presupuesto exacto. Pero sí me gustaría cobrar online la Revisión pre-compra y el Diagnóstico computarizado, porque esos tienen tarifa fija.
+Entrevistador: ¿Querés que en la web se agenden citas asociadas a tu agenda por alguno de estos servicios? Indicame cuáles y si serían online u offline.
+Cliente: Sí, recontra necesario. Me gustaría que puedan reservar turno para Mantenimiento preventivo, Diagnóstico computarizado y Revisión pre-compra. Obviamente son citas offline, presenciales acá en el taller, porque el auto tiene que venir para acá.
+Entrevistador: ¿Cómo funciona tu agendamiento de citas o turnos? Contame en tus propias palabras si son turnos únicos, semanales, mensuales o un paquete cerrado.
+Cliente: Es por turno único, puntual. El cliente entra, elige día y hora, viene con el auto, le hacemos el trabajo en el día o en un par de horas y listo. No trabajamos con abonos mensuales ni paquetes de varias visitas por ahora.
+Entrevistador: ¿Tenés contenido relevante sobre tus servicios en canales de redes sociales? Indicame cuáles.
+Cliente: Sí, subimos bastante cosa a Instagram (@tallerrutasur) y algunos videos cortos a TikTok mostrando el antes y el después de los arreglos, piezas gastadas que sacamos y consejos rápidos para cuidar el motor.
+BLOQUE 2: PRODUCTOS
+Entrevistador: Pasemos a productos. ¿Vas a vender algún producto físico en la web?
+Cliente: Sí, queremos arrancar vendiendo algunos insumos básicos que la gente siempre pide cuando viene al taller, como para que los compren directo o los retiren acá.
+Entrevistador: ¿Cuántos productos calculás que vas a cargar al principio?
+Cliente: Y... para arrancar unos 15 o 20 productos, nada muy gigante.
+Entrevistador: Nombrame entre 1 y 3 ejemplos de esos productos.
+Cliente: Por ejemplo: bidones de aceite sintético 10W-40, escobillas limpiaparabrisas y kits de lámparas LED para ópticas.
+BLOQUE 3: IMAGEN DE MARCA
+Entrevistador: Sobre la imagen del taller, ¿tenés logo?
+Cliente: Sí, tenemos un logo que nos hizo un diseñador hace un par de años, con un pistón y el nombre del taller en rojo y gris oscuro. Después te paso los archivos originales.
+Entrevistador: ¿Tenés un eslogan?
+Cliente: La verdad que no, nunca le pusimos una frase abajo. Si se les ocurre algo corto que transmita confianza y rapidez, bienvenido sea.
+BLOQUE 4: SOBRE TI
+Entrevistador: ¿Cómo querés presentarte en la web? ¿Como Martín, como el equipo de Taller Ruta Sur...?
+Cliente: Como Martín Rodríguez, fundador de Taller Mecánico Ruta Sur, pero hablando también en plural porque somos tres mecánicos trabajando fijo acá.
+Entrevistador: ¿Qué estilo va más contigo, formal o informal?
+Cliente: Un punto medio, más bien cercano y claro, sin palabras rebuscadas de ingeniero que el cliente no entiende, pero tampoco tan informal como si fuéramos amigos de toda la vida. Profesional y directo.
+Entrevistador: Dame una descripción breve de vos y de tu trabajo asociada a la web que vamos a crear.
+Cliente: Tengo más de 15 años metiendo mano en autos multimarca. Abrí Taller Ruta Sur hace 8 años con la idea de terminar con el misterio de los talleres mecánicos: acá te mostramos el repuesto viejo, te explicamos qué tiene el auto sin vueltas y cumplimos con los horarios de entrega.
+BLOQUE 5: SOBRE TU CLIENTE
+Entrevistador: Describime brevemente cómo es tu cliente tipo.
+Cliente: Mayormente son hombres y mujeres de entre 28 y 55 años que usan el auto todos los días para ir a trabajar o llevar a los hijos, gente que no sabe mucho de mecánica y lo que más busca es alguien de confianza que no le cobre de más ni le invente fallas.
+Entrevistador: ¿Lo tratás de "tú" o de "usted"?
+Cliente: Acá en Uruguay somos de "vos", o sea, tuteo cercano ("traé tu auto", "agendá tu turno"), nada de "usted".
+Entrevistador: ¿Tenés testimonios de clientes sobre tus servicios que podamos usar en la web? ¿Cuántos?
+Cliente: Tenemos un montón de reseñas en Google Maps con 4.9 estrellas, fácil unas 40 o 50. Podemos agarrar las mejores 5 o 6 de ahí para ponerlas en la página.

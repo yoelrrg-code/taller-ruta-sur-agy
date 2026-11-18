@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Glassy AI Web Boilerplate",
+  name: "Taller Mecánico Ruta Sur",
+  shortName: "Ruta Sur",
   description:
-    "Clean Next.js, Tailwind CSS, and Lucide boilerplate with base SEO configuration.",
+    "Mecánica automotriz multimarca en Uruguay. Mantenimiento preventivo, diagnóstico computarizado, revisión pre-compra y venta de insumos básicos. Turnos puntuales y repuesto a la vista.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  locale: "en_US",
+  locale: "es_UY",
 } as const;
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} | Mecánica clara, rápida y sin vueltas`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -20,12 +21,12 @@ export const baseMetadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: `${siteConfig.name} | Mecánica clara, rápida y sin vueltas`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: `${siteConfig.name} | Mecánica clara, rápida y sin vueltas`,
     description: siteConfig.description,
   },
   robots: {
